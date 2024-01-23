@@ -3,6 +3,6 @@
 """Define a Class Square """
 
 
-class square:
+class Square:
     """Class square is represented - body """
     pass
