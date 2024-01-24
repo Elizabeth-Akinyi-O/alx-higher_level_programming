@@ -50,6 +50,6 @@ class Square:
         """Define the less or equal to comparison to a square."""
         return self.area() <= other.area()
 
-    def __le__(self, other):
+    def __ge__(self, other):
         """Define the great or equal to comparison to a square."""
         return self.area() >= other.area()
