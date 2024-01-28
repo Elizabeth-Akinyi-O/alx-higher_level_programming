@@ -9,3 +9,4 @@ High level programming languages:
 - 0x05. Python - Exceptions
 - 0x06. Python - Classes and Objects 
 - 0x08-python-more_classes
+- 0x09. Python - Everything is object
