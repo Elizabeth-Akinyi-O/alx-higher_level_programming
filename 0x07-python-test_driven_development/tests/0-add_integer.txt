@@ -17,6 +17,9 @@ Run tests:
     >>> add_integer(5, -11)
     -6
 
+    >>> add_integer(-10, -11)
+    -21
+
 Integers and floats can be added together:
 
     >>> add_integer(3, 1.0)
@@ -59,11 +62,25 @@ for the first argument:
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-Function fails if infinity is provided for floats, and NaN numbers as well:
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add integer() missing 1 requirement: 'a'
+
+Function fails if infinity is provided:
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverFlowError: cannot convert float infinity to integer
 
     >>> add_integer(5, float('inf'))
     Traceback (most recent call last):
     OverFlowError: cannot convert float infinity to integer
+
+Function fails if NaN numbers are provided:
+
+    >>>add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
 
     >>> add_integer(5, float('nan'))
     Traceback (most recent call last):
