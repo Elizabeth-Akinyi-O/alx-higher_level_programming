@@ -1,9 +1,10 @@
 Learning Objectives:
 
 - How Python works with different types of objects.
-- Think and brainstorm with peers before testing examples in the Python interpreter.
+- Think and brainstorm with peers, before testing examples in the Python interpreter.
 
 Questions:
+
 0. What function would you use to get the type of an object?
 
 Write the name of the function in the file, without ().
