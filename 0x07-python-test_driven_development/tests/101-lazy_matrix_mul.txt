@@ -1,0 +1,20 @@
+============================================
+lazy_matrix_mul module
+============================================
+
+Doc test for the lazy_matrix_mul function.
+============================================
+
+Import the function:
+
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Run tests:
+
+    >>> m_a = [[1, 2]]
+    >>> m_b = [
+    ... [3, 4],
+    ... [5, 6]
+    ... ]
+    >>> lazy_matrix_mul(m_a, m_b)
+    [[13 16]]
