@@ -2,7 +2,7 @@
 0-add_integer module
 ============================================
 
-Unit test for the add_integer function. Returns the sum of two integers
+Doc test for the add_integer function. Returns the sum of two integers
 ============================================
 
 Import the function:
@@ -10,35 +10,6 @@ Import the function:
     >>> add_integer = __import__('0-add_integer').add_integer
 
 Run tests:
-
-    >>> add_integer(4, 5)
-    9
-
-    >>> add_integer(5, -11)
-    -6
-
-    >>> add_integer(-10, -11)
-    -21
-
-Integers and floats can be added together:
-
-    >>> add_integer(3, 1.0)
-    4
-
-Should work with floats as well:
-
-    >>> add_integer(6.0, 12.0)
-    18
-
-Floats should be casted to ints before operation:
-
-    >>> add_integer(15.3, 5.1)
-    20
-
-The second argument is optional, and is by default 98 ie (a, b=98):
-
-    >>> add_integer(3)
-    101
 
 Both arguments should be either ints/floats. If either args is a non-int
 and non-float, a TypeError is raised:
@@ -55,6 +26,22 @@ and non-float, a TypeError is raised:
     Traceback (most recent call last):
     TypeError: a must be an integer
 
+Both arguments are integers/floats:
+
+    >>> add_integer(4, 5)
+    9
+
+    >>> add_integer(5, -11)
+    -6
+
+    >>> add_integer(-10, -11)
+    -21
+
+Integers and floats can be added together:
+
+    >>> add_integer(3, 1.0)
+    4
+
 If both args are non-ints and non-floats, a TypeError message is printed only
 for the first argument:
 
@@ -62,6 +49,23 @@ for the first argument:
     Traceback (most recent call last):
     TypeError: a must be an integer
 
-    >>> add_integer()
+Should work with floats as well:
+
+    >>> add_integer(6.0, 12.0)
+    18
+
+Floats should be casted to ints before operation:
+
+    >>> add_integer(15.3, 5.1)
+    20
+
+The second argument is optional, and is by default 98 ie (a, b=98):
+
+    >>> add_integer(3)
+    101
+
+Function fails if NaN numbers are provided:
+
+    >>> add_integer(float('nan'))
     Traceback (most recent call last):
-    TypeError: add integer() missing 1 requirement: 'a'
+    ValueError: cannot convert float NaN to integer
