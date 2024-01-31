@@ -1,0 +1,73 @@
+============================================
+100-matrix_mul module
+============================================
+
+Doc test for the 100-matrix_mul function. Returns the product of m_a && m_b
+============================================
+
+Import the function:
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Run tests:
+
+    >>> matrix_mul([[2, 5]], [[{"b":1}, 9.5]])
+    Traceback (most recent call last):
+        ---
+    TypeError: m_b should contain only integers or floats
+
+
+    >>> matrix_mul([[3, "Alx"]], [[4, 8]])
+    Traceback (most recent call last):
+        ---
+    TypeError: m_a should contain only integers or floats
+
+
+    >>> matrix_mul([3, 5], [[6, 9]])
+    Traceback (most recent call last):
+        ---
+    TypeError: m_a must be a list of lists
+
+
+    >>> matrix_mul([[5, 6]], "String")
+    Traceback (most recent call last):
+        ---
+    TypeError: m_b must be a list
+
+
+    >>> matrix_mul("String not matrix", [[12, 5]])
+    Traceback (most recent call last):
+        ---
+    TypeError: m_a must be a list
+
+
+    >>> matrix_mul([[12, 5]], [[]])
+    Traceback (most recent call last):
+        ---
+    ValueError: m_b can't be empty
+
+
+    >>> m_a = [
+    ... [4, 6],
+    ... [7, 9, 12]
+    ... ]
+    >>> m_b = m_a
+    >>> matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ---
+    TypeError: each row of m_a must be of the same size
+
+
+    >>> m_a = [
+    ... [1, 2],
+    ... [3, 4]
+    ... ]
+    >>> m_b = [
+    ... [5, 6],
+    ... [8, 9],
+    ... [10, 11]
+    ... ]
+    >>> matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+        ---
+    ValueError: m_a and m_b can't be multiplied
