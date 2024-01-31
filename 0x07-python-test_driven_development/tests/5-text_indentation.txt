@@ -1,0 +1,53 @@
+============================================
+5-text_indentation module
+============================================
+
+Doc test for the text_indentation function. prints a text with 2 new
+lines after each of these characters: ., ? and :
+============================================
+
+Import the function:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Run tests:
+
+The parameter 'text' must be a string. A TypeError is raised if otherwise:
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ---
+    TypeError: text must be a string
+
+    >>> text_indentation({"three":3, "five":5})
+    Traceback (most recent call last):
+        ---
+    TypeError: text must be a string
+
+    >>> text_indentation(15)
+    Traceback (most recent call last):
+        ---
+    TypeError: text must be a string
+
+The parameter 'text' is a string:
+
+    >>> text_indentation("Holberton to Alx?")
+    Holberton to Alx?
+    <BLANKLINE>
+
+No spaces are printed at the beginning of a line:
+
+    >>> text_indentation("    Holberton to Alx.")
+    Holberton to Alx.
+    <BLANKLINE>
+
+New lines are only printed for texts ending with the characters: ".", "?" and ":":
+
+    >>> text_indentation("No ending character for this text")
+    No ending character for this text
+
+No spaces are printed at the end of a line:
+
+    >>> text_indentation("Holberton to Alx.    ")
+    Holberton to Alx.
+    <BLANKLINE>
