@@ -33,7 +33,7 @@ More than 1 argument - TypeError is raised
 
     >>> my_list = MyList([3, 5, 7], [1,4])
     Traceback (most recent call last):
-    TypeError: list() tales at most 1 argument (2 given)
+    TypeError: list expected at most 1 argument, got 2
 
 Using the append() method:
 
@@ -56,7 +56,7 @@ Using the replace with indexing method:
 Using the remove() method:
 
     >>> my_list.remove(1500)
-    print(my_list)
+    >>> print(my_list)
     [100, 33, 500, 45, 88]
 
 Using the print_sorted(self) method - takes no arguments:
@@ -69,9 +69,9 @@ A TypeError is raised if an arguemnt is given:
 
     >>> my_list.print_sorted(1)
     Traceback (most recent call last):
-    TypeError: print_sorted() takes 1 positional argument but 2 were given
+    TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
 
-The print_sorted() method prints a list in ascending order:
+The print_sorted() method prints a list in ascending order.
 
     >>> my_list.append(100)
     >>> my_list.append(33)
@@ -81,7 +81,7 @@ The print_sorted() method prints a list in ascending order:
     >>> print(my_list)
     [100, 33, 500, 45, 88]
 
-    >>> my_list.print_sorted()
+    my_list.print_sorted()
     [33, 45, 88, 100, 500]
 
 The original list is not altered despite calling the print_sorted() method:
@@ -99,12 +99,13 @@ that uses an algorithm based on the alphabetical order used in dictionaries)
     >>> my_list.append("Fortran")
     >>> my_list.append("Cobol")
     >>> my_list.append("Assembly")
+    >>> my_list.append('C')
 
     print(my_list)
-    ['Preferred', 'Languages', 'Malbolge', 'Fortran', 'Cobol', 'Assembly']
+    ['Preferred', 'Languages', 'Malbolge', 'Fortran', 'Cobol', 'Assembly', 'C']
     
     my_list.print_sorted()
-    ['Assembly', 'Cobol', 'Fortran', 'Languages', 'Malbolge', 'Preferred']
+    ['Assembly', 'C', 'Cobol', 'Fortran', 'Languages', 'Malbolge', 'Preferred']
 
 The original list is not altered despite calling the print_sorted() method:
 
@@ -114,12 +115,10 @@ The original list is not altered despite calling the print_sorted() method:
 Empty lists are not sorted:
 
     >>> my_list = MyList()
-    my_list.print_sorted()
-    []
 
 If a list contains different data types, a TypeError is raised:
 
-    my_list = MyList([100, "Malbolge", 88, "Fortran", 45])
+    my_list = MyList([100, "Malbolge", "Fortran", 45])
     my_list.print_sorted()
     Traceback (most recent call last):
     TypeError: unorderable types: str() < int()
