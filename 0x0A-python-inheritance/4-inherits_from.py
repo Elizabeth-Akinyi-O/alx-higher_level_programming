@@ -14,6 +14,6 @@ def is_same_class(obj, a_class):
         (directly or indirectly) from the specified class
         Otherwise False
     """
-    if issubclass(type(obj), a_class) and type(obj) is not a_class:
+    if issubclass(type(obj), a_class) and type(obj) != a_class:
         return True
     return False
