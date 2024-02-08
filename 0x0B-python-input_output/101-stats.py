@@ -20,7 +20,7 @@ def print_statistics(size, status_code):
         print("{}: {}".format(key, status_code[key]))
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     import sys
 
     size = 0
