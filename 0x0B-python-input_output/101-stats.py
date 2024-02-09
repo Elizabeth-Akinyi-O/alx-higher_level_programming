@@ -8,20 +8,10 @@ Each 10 lines and after a keyboard interruption (CTRL + C),
     prints those statistics since the beginning
 """
 
-
-def print_statistics(size, status_code):
-    """Prints statistics from the beginning
-    Args:
-        size (int): Accumulated read file size
-        status_code (dict): Accumulated count of status codes
-    """
-    print("File size:  {}".format(size))
-    for key in sorted(status_code):
-        print("{}: {}".format(key, status_code[key]))
-
-
 if __name__ == "__main__":
     import sys
+
+    stdin = sys.stdin
 
     size = 0
     status_code = {}
@@ -29,9 +19,11 @@ if __name__ == "__main__":
     count = 0
 
     try:
-        for line in sys.stdin:
+        for line in stdin:
             if count == 10:
-                print_statistics(size, status_code)
+                print("File size: {}".format(size))
+                for key in sorted(status_code):
+                    print("{}: {}".format(key, status_code[key]))
                 count = 1
             else:
                 count += 1
@@ -52,8 +44,12 @@ if __name__ == "__main__":
             except IndexError:
                 pass
 
-        print_statistics(size, status_code)
+        print("File size: {}".format(size))
+        for key in sorted(status_code):
+            print("{}: {}".format(key, status_code[key]))
 
     except KeyboardInterrupt:
-        print_statistics(size, status_code)
+        print("File size: {}".format(size))
+        for key in sorted(status_code):
+            print("{}: {}".format(key, status_code[key]))
         raise
