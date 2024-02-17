@@ -8,7 +8,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestBase_save_to_file(unittest.Testcase):
+class TestBase_save_to_file(unittest.TestCase):
     """Tests save_to_file method of class Base"""
 
     @classmethod
@@ -86,7 +86,7 @@ class TestBase_save_to_file(unittest.Testcase):
             self.assertEqual("[]", x.read())
 
 
-class TestBase_save_to_file_csv(unittest.Testcase):
+class TestBase_save_to_file_csv(unittest.TestCase):
     """Tests save_to_file_csv method of class Base"""
 
     @classmethod
@@ -164,7 +164,7 @@ class TestBase_save_to_file_csv(unittest.Testcase):
             self.assertEqual("[]", x.read())
 
 
-class TestBase_instantiation(unittest.Testcase):
+class TestBase_instantiation(unittest.TestCase):
     """Tests instantiation of the class Base"""
 
     def test_two_args(self):
@@ -351,7 +351,7 @@ class TestBase_from_json_string(unittest.TestCase):
         self.assertEqual(list_input, list_output)
 
 
-class TestBase_create(unittest.Testcase):
+class TestBase_create(unittest.TestCase):
     """Tests create method of class Base"""
 
     def test_create_rectangle_original(self):
