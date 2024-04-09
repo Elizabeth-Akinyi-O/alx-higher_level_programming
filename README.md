@@ -16,3 +16,4 @@ High level programming languages:
 - 0x0C. Python - Almost a circle
 - 0x0D. SQL - Introduction
 - 0x0E. SQL - More queries
+- 0x12. JavaScript - Warm up
