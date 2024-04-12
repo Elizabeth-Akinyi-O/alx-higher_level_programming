@@ -1,6 +1,6 @@
 High level programming languages:
 
-* Python Projects:
+* All Projects - Python, SQL, Javascript:
 - 0x00-python-hello_world
 - 0x01. Python - if/else, loops, functions
 - 0x02. Python - import & modules
@@ -18,3 +18,4 @@ High level programming languages:
 - 0x0E. SQL - More queries
 - 0x12. JavaScript - Warm up
 - 0x13. JavaScript - Objects, Scopes and Closures
+- 0x0F. Python - Object-relational mapping
