@@ -19,7 +19,7 @@ def main():
     for states in rows:
         print(states)
     cursor.close()
-    db.cursor()
+    db.close()
 
 
 if __name__ == "__main__":
