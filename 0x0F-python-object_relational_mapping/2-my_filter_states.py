@@ -8,26 +8,28 @@ import MySQLdb
 import sys
 
 
-def main():
-    """This file uses a MySQL search from Python"""
-    db_user = sys.argv[1]
-    db_password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    search = sys.argv[4]
 # Database connection
-    db = MySQLdb.connect(host="localhost", port=3306, user=db_user,
-                         passwd=db_password, db=db_name)
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database
+    )
+
     cursor = db.cursor()
     sqlquery = ("""SELECT * FROM states WHERE BINARY
-                   states.name='{}'""".format(state_name_))
+                search='{}'""".format(search))
     cursor.execute(sqlquery)
     rows = cursor.fetchall()
 
     for states in rows:
         print(states)
+
     cursor.close()
     db.close()
-
-
-if __name__ == "__main__":
-    main()
