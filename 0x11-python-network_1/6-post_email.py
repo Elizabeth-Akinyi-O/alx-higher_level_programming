@@ -4,7 +4,7 @@ to the passed URL with the email as a parameter, and
 finally displays the body of the response """
 
 from sys import argv
-from requests import get
+from requests import post
 
 
 if __name__ == "__main__":
