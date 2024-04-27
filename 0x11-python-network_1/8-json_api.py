@@ -6,6 +6,7 @@ http://0.0.0.0:5000/search_user with the letter as a parameter.
 from sys import argv
 from requests import get
 
+
 if __name__ == "__main__":
     URL = 'http://0.0.0.0:5000/search_user'
     data = {'q': argv[1] if len(argv) >= 2 else ""}
