@@ -13,6 +13,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
     search = sys.argv[4]
+    tble = "states"
 # Database connection
     db = MySQLdb.connect(
         host="localhost",
@@ -23,9 +24,9 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    sqlquery = ("""SELECT * FROM states WHERE BINARY
-                search='{}'""".format(search))
-    cursor.execute(sqlquery)
+    cursor.execute("SELECT * FROM {} WHERE BINARY name='{}' ORDER BY id"
+                   .format(tble, search))
+
     rows = cursor.fetchall()
 
     for states in rows:
