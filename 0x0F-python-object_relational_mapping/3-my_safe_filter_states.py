@@ -24,9 +24,8 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 # fl_state_name = MySQLdb.escape_string(state_name).decode()
-    sqlquery = ("SELECT * FROM states WHERE BINARY name=%s ORDER BY id",
-                (state_name, ))
-    cursor.execute(sqlquery)
+    cursor.execute("SELECT * FROM states WHERE BINARY name = %s ORDER BY id",
+                   (state_name, ))
     rows = cursor.fetchall()
 
     for states in rows:
