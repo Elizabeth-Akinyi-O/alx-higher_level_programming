@@ -9,23 +9,23 @@ import sys
 
 
 if __name__ == "__main__":
-    db_user = sys.argv[1]
-    db_password = sys.argv[2]
-    db_name = sys.argv[3]
-    state_name = sys.argv[4]
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    search = sys.argv[4]
 # Database connection
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=db_user,
-        passwd=db_password,
-        db=db_name
+        user=username,
+        passwd=password,
+        db=database,
     )
 
     cursor = db.cursor()
 # fl_state_name = MySQLdb.escape_string(state_name).decode()
-    cursor.execute("SELECT * FROM states WHERE BINARY name = %s ORDER BY id",
-                   (state_name, ))
+    cursor.execute("SELECT * FROM states WHERE BINARY name=%s ORDER BY id",
+                   (search, ))
     rows = cursor.fetchall()
 
     for states in rows:
