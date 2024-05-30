@@ -19,6 +19,7 @@ High level programming languages:
 - 0x12. JavaScript - Warm up
 - 0x13. JavaScript - Objects, Scopes and Closures
 - 0x14. JavaScript - Web scraping
+- 0x15. JavaScript - Web jQuery
 - 0x0F. Python - Object-relational mapping
 - 0x10. Python - Network #0
 - 0x11. Python - Network #1
